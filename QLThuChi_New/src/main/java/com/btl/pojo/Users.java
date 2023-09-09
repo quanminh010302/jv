@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author MTriet
+ * @author Admin
  */
 @Entity
 @Table(name = "users")
@@ -34,7 +34,9 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Users.findByUsername", query = "SELECT u FROM Users u WHERE u.username = :username"),
     @NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password"),
     @NamedQuery(name = "Users.findByEmail", query = "SELECT u FROM Users u WHERE u.email = :email"),
-    @NamedQuery(name = "Users.findByRole", query = "SELECT u FROM Users u WHERE u.role = :role")})
+    @NamedQuery(name = "Users.findByRole", query = "SELECT u FROM Users u WHERE u.role = :role"),
+    @NamedQuery(name = "Users.findByFirstname", query = "SELECT u FROM Users u WHERE u.firstname = :firstname"),
+    @NamedQuery(name = "Users.findByLatename", query = "SELECT u FROM Users u WHERE u.latename = :latename")})
 public class Users implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -64,6 +66,16 @@ public class Users implements Serializable {
     @Size(min = 1, max = 5)
     @Column(name = "role")
     private String role;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "firstname")
+    private String firstname;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "latename")
+    private String latename;
     @OneToMany(mappedBy = "userId")
     private Set<Expenses> expensesSet;
 
@@ -74,12 +86,14 @@ public class Users implements Serializable {
         this.id = id;
     }
 
-    public Users(Integer id, String username, String password, String email, String role) {
+    public Users(Integer id, String username, String password, String email, String role, String firstname, String latename) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
         this.role = role;
+        this.firstname = firstname;
+        this.latename = latename;
     }
 
     public Integer getId() {
@@ -120,6 +134,22 @@ public class Users implements Serializable {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLatename() {
+        return latename;
+    }
+
+    public void setLatename(String latename) {
+        this.latename = latename;
     }
 
     @XmlTransient

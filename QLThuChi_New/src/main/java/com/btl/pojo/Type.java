@@ -16,13 +16,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author MTriet
+ * @author Admin
  */
 @Entity
 @Table(name = "type")
@@ -39,8 +38,7 @@ public class Type implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @NotNull(message = "{type.name.NotNullErr}")
-    @Size(min =5, max = 45, message = "{type.name.Err01}" )
+    @Size(max = 45)
     @Column(name = "name")
     private String name;
     @JoinColumn(name = "category_id", referencedColumnName = "id")

@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Users u = this.userRepo.getUserByUsername(username);
+         Users u = this.userRepo.getUserByUsername(username);
         if (u == null) {
             throw new UsernameNotFoundException("Invalid");
 

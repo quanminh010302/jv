@@ -14,6 +14,7 @@ import java.util.Map;
  */
 public interface UserRepostory {
         Users getUserByUsername(String username);
+        
         public List<Users> getUsers(Map<String, String> params);
         Long countUsers();
 }

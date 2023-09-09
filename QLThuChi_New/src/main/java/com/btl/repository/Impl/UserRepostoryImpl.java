@@ -22,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,6 +37,7 @@ public class UserRepostoryImpl implements UserRepostory {
 
     @Autowired
     private LocalSessionFactoryBean factory;
+
     @Autowired
     private Environment env;
 
@@ -102,7 +104,7 @@ public class UserRepostoryImpl implements UserRepostory {
     @Override
     public Users getUserByUsername(String username) {
         Session s = this.factory.getObject().getCurrentSession();
-        Query q= s.createQuery("FROM Users WHERE username:un");
+        Query q = s.createQuery("FROM Users WHERE username = :un");
         q.setParameter("un", username);
         return (Users) q.getSingleResult();
     }

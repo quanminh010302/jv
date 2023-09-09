@@ -13,6 +13,7 @@ import java.util.Map;
  * @author MTriet
  */
 public interface UserRepostory {
+        Users getUserByUsername(String username);
         public List<Users> getUsers(Map<String, String> params);
         Long countUsers();
 }

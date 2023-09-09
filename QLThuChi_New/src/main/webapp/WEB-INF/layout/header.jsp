@@ -31,8 +31,25 @@
                     <li class="nav-item">
                         <a class="nav-link" href="${searchUrl}">${c.name}</a>
                     </li>
+                    </c:forEach>
+                    <c:choose>
+                        <c:when test="${pageContext.request.userPrincipal.name != null}">
+                            <li class="nav-item">
 
-                </c:forEach>
+                                <a class="nav-link" href="<c:url value="/"/>">${pageContext.request.userPrincipal.name}</a>
+                            </li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="nav-item">
+
+                                <a class="nav-link" href="<c:url value="/login"/>">Đăng Nhập</a>
+                            </li>
+                        </c:otherwise>
+                    </c:choose>
+
+
+
+                
             </ul>
             <c:url value="/" var="action"/>
             <form class="d-flex" action="${action}">

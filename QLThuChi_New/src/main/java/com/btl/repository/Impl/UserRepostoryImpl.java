@@ -99,4 +99,12 @@ public class UserRepostoryImpl implements UserRepostory {
         return Long.parseLong(q.getSingleResult().toString());
     }
 
+    @Override
+    public Users getUserByUsername(String username) {
+        Session s = this.factory.getObject().getCurrentSession();
+        Query q= s.createQuery("FROM Users WHERE username:un");
+        q.setParameter("un", username);
+        return (Users) q.getSingleResult();
+    }
+
 }

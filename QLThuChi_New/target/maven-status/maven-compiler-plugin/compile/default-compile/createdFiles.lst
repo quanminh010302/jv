@@ -11,7 +11,9 @@ com\btl\repository\CategoryRepository.class
 com\btl\pojo\Expenses.class
 com\btl\repository\UserRepostory.class
 com\btl\service\Impl\TypeServiceImpl.class
+com\btl\configs\SecurityWebApplicationInitializer.class
 com\btl\service\UserService.class
+com\btl\configs\SpringSecurityConfig.class
 com\btl\pojo\Categories.class
 com\btl\formatters\TypeFormatter.class
 com\btl\service\Impl\UserServiceImpl.class
@@ -31,5 +33,6 @@ com\btl\pojo\Type.class
 com\btl\pojo\Users_.class
 com\btl\controllers\ApiExpensesController.class
 com\btl\repository\ExpensesRepository.class
+login.class
 com\btl\service\CategoryService.class
 com\btl\repository\TypeRepository.class

@@ -15,28 +15,33 @@
                 <th>Mô tả</th>
                 <th>Số tiền(VNĐ)</th>
                 <th>Thời gian</th>
-                
-                
+
+
                 <th></th>
             </tr>
         </thead>
         <tbody>                  
             <c:forEach items="${expenses}" var = "e">
                 <tr>
-                   <td>${e.userId.username}</td>
+                    <td>${e.userId.username}</td>
                     <td>${e.categoryId.name}</td>
                     <td>${e.description}</td>
-                    <td>${e.amount}</td>
+                    <td>    
+                        <c:choose>
+                            <c:when test="${e.categoryId.name == 'Thu nhập'}">+${e.amount}</c:when>
+                            <c:when test="${e.categoryId.name == 'Chi tiêu'}">-${e.amount}</c:when>
+                            <c:otherwise>${e.amount}</c:otherwise>
+                        </c:choose></td>
                     <td>${e.date}</td>
-                    
-                    
-                 
+
+
+
 
                     <td>
-                        <c:url value="/api/expenses/${e.id}" var="apiDel"/>
                         <a href="<c:url value="/expenses/${e.id}"/>" class="btn btn-success ">Cập nhật</a>
+                        <c:url value="/api/expenses/${e.id}" var="apiDel"/>
                         <button class="btn btn-danger" onclick="del('${apiDel}',${e.id})" >Xóa</button>
-                        
+
                     </td>
                 </tr>
             </c:forEach>

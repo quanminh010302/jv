@@ -33,6 +33,5 @@ com\btl\pojo\Type.class
 com\btl\pojo\Users_.class
 com\btl\controllers\ApiExpensesController.class
 com\btl\repository\ExpensesRepository.class
-login.class
 com\btl\service\CategoryService.class
 com\btl\repository\TypeRepository.class

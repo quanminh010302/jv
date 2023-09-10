@@ -32,17 +32,15 @@
                         <a class="nav-link" href="${searchUrl}">${c.name}</a>
                     </li>
                     </c:forEach>
-                    <c:choose>
+                          <c:choose>
                         <c:when test="${pageContext.request.userPrincipal.name != null}">
                             <li class="nav-item">
-
-                                <a class="nav-link" href="<c:url value="/"/>">${pageContext.request.userPrincipal.name}</a>
+                                <a class="nav-link" href="<c:url value="/" />">${pageContext.request.userPrincipal.name}</a>
                             </li>
                         </c:when>
                         <c:otherwise>
                             <li class="nav-item">
-
-                                <a class="nav-link" href="<c:url value="/login"/>">Đăng Nhập</a>
+                                <a class="nav-link" href="<c:url value="/login" />">Đăng nhập</a>
                             </li>
                         </c:otherwise>
                     </c:choose>

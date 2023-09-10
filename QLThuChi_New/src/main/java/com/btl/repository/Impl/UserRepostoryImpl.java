@@ -53,11 +53,10 @@ public class UserRepostoryImpl implements UserRepostory {
             List<Predicate> predicates = new ArrayList<>();
 
             String kw = params.get("kw");
-            if (kw != null && !kw.isEmpty()) 
+            if (kw != null && !kw.isEmpty()) {
                 predicates.add(b.like(root.get("username"), String.format("%%%s%%", kw)));
+            }
 
-           
-            
             String fromDateStr = params.get("fromDate");
             String toDateStr = params.get("toDate");
 
@@ -66,7 +65,7 @@ public class UserRepostoryImpl implements UserRepostory {
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                     Date fromDate = dateFormat.parse(fromDateStr);
                     Date toDate = dateFormat.parse(toDateStr);
-                    
+
                     // Thêm điều kiện tìm kiếm theo ngày tháng năm
                     predicates.add(b.between(root.get("date"), fromDate, toDate));
                 } catch (ParseException e) {
@@ -80,7 +79,7 @@ public class UserRepostoryImpl implements UserRepostory {
         q.orderBy(b.asc(root.get("role")));
 
         Query query = session.createQuery(q);
-        
+
         if (params != null) {
             String page = params.get("page");
             if (page != null && !page.isEmpty()) {
@@ -104,7 +103,7 @@ public class UserRepostoryImpl implements UserRepostory {
     @Override
     public Users getUserByUsername(String username) {
         Session s = this.factory.getObject().getCurrentSession();
-        Query q = s.createQuery("FROM Users WHERE username = :un");
+        Query q = s.createQuery("FROM Users WHERE username = :un"); // Sửa ở đây
         q.setParameter("un", username);
         return (Users) q.getSingleResult();
     }

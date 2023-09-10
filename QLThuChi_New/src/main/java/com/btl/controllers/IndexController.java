@@ -53,6 +53,7 @@ public class IndexController {
 
     public String index(Model model, @RequestParam Map<String, String> params) {
 
+        model.addAttribute("type", this.typeService.getTypes(params));
         model.addAttribute("expenses", this.expensesService.getExpenses(params));
         model.addAttribute("users", this.userService.getUsers(params));
 
@@ -65,8 +66,8 @@ public class IndexController {
     }
 
     @GetMapping("/list_type")
-    public String list_type(Model model) {
-        List<Type> types = this.typeService.getTypes();
+    public String list_type(Model model, Map<String, String> params) {
+        List<Type> types = this.typeService.getTypes(params);
         model.addAttribute("type", types);
 
         int pageSize = Integer.parseInt(this.env.getProperty("PAGE_SIZE"));

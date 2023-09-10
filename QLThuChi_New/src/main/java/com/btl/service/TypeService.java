@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public interface TypeService {
 //        public List<Expenses> getExpenses(Map<String, String> params);
-     public List<Type> getTypes();
+     public List<Type> getTypes(Map<String, String> params);
      boolean addOrUpdateType(Type t);
      Type getTypeById(int id);
      Long countType();

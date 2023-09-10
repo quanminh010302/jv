@@ -13,7 +13,7 @@ import java.util.Map;
  * @author MTriet
  */
 public interface TypeRepository {
-        public List<Type> getTypes();
+        public List<Type> getTypes( Map<String, String> params);
         boolean addOrUpdateType(Type t);
         Type getTypeById(int id);
         Long countType(); 

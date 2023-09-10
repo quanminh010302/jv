@@ -34,8 +34,8 @@ public class TypeServiceImpl implements TypeService {
 //        return this.ExpensesRepo.getExpenses(params);
 //    }
     @Override
-    public List<Type> getTypes() {
-        return this.typeRepo.getTypes();
+    public List<Type> getTypes(Map<String, String> params) {
+        return this.typeRepo.getTypes(params);
     }
 
     @Override

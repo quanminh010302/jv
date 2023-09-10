@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
  *
  * @author MTriet
  */
-@Service("userDetailsService")
+@Service("UserDetailsService")
 public class UserServiceImpl implements UserService {
 
     @Autowired

@@ -17,6 +17,7 @@ C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\
 C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\QLThuChi_New\src\main\java\com\btl\service\Impl\UserServiceImpl.java
 C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\QLThuChi_New\src\main\java\com\btl\service\TypeService.java
 C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\QLThuChi_New\src\main\java\com\btl\service\Impl\TypeServiceImpl.java
+C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\QLThuChi_New\src\main\java\com\btl\controllers\ApiCategoryController.java
 C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\QLThuChi_New\src\main\java\com\btl\controllers\IndexController.java
 C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\QLThuChi_New\src\main\java\com\btl\controllers\UserController.java
 C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\QLThuChi_New\src\main\java\com\btl\pojo\Categories.java
@@ -29,6 +30,5 @@ C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\
 C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\QLThuChi_New\src\main\java\com\btl\pojo\Type.java
 C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\QLThuChi_New\src\main\java\com\btl\configs\SpringSecurityConfig.java
 C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\QLThuChi_New\src\main\java\com\btl\controllers\ApiTypeController.java
-C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\QLThuChi_New\src\main\java\login.java
 C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\QLThuChi_New\src\main\java\com\btl\repository\Impl\TypeRepositoryImpl.java
 C:\Users\Admin\Documents\2051012095_NguyenMinhQuan\LapTrinhJava\QuanLyThuChi\jv\QLThuChi_New\src\main\java\com\btl\formatters\TypeFormatter.java

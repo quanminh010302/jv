@@ -34,9 +34,6 @@
                         </c:choose></td>
                     <td>${e.date}</td>
 
-
-
-
                     <td>
                         <a href="<c:url value="/expenses/${e.id}"/>" class="btn btn-success ">Cập nhật</a>
                         <c:url value="/api/expenses/${e.id}" var="apiDel"/>

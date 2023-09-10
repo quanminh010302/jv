@@ -14,8 +14,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  * @author MTriet
  */
 public interface UserService extends UserDetailsService{
-           
     
+        Users getUserByUn(String username);
+    boolean authUser(String username, String password);
+    Users addUser(Map<String, String> params);
+           
+    Users getUsers(String username);
             public List<Users> getUsers(Map<String, String> params);
             Long countUsers();
             

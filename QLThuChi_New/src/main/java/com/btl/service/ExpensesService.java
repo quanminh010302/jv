@@ -16,7 +16,7 @@ import java.util.Map;
 public interface ExpensesService {
 //        public List<Expenses> getExpenses(Map<String, String> params);
      public List<Expenses> getExpenses(Map<String, String> params);
-     Long countExpenses();
+     int countExpenses();
      Expenses getExpensesById(int id);
      boolean deleteExpenses(int id);
      List<Expenses> getExpensesByUser(Users userId);

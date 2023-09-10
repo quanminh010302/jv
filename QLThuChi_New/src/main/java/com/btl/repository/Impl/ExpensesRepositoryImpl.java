@@ -175,13 +175,13 @@ public class ExpensesRepositoryImpl implements ExpensesRepository {
         return query.getResultList();
         
     }
-
+// All 12
     @Override
-    public Long countExpenses() {
+    public int countExpenses() {
         Session session = this.factory.getObject().getCurrentSession();
         Query q = session.createQuery("SELECT Count(*) FROM Expenses");
 
-        return Long.parseLong(q.getSingleResult().toString());
+        return Integer.parseInt(q.getSingleResult().toString());
     }
 
     @Override

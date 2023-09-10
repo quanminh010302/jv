@@ -13,8 +13,14 @@ import java.util.Map;
  * @author MTriet
  */
 public interface UserRepostory {
-        Users getUserByUsername(String username);
-        
-        public List<Users> getUsers(Map<String, String> params);
-        Long countUsers();
+
+    Users getUserByUsername(String username);
+
+    boolean authUser(String username, String password);
+
+    Users addUser(Users user);
+
+    public List<Users> getUsers(Map<String, String> params);
+
+    Long countUsers();
 }

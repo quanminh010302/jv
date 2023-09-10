@@ -18,7 +18,7 @@ public interface ExpensesRepository {
     public List<Expenses> getExpenses(Map<String, String> params);
 //        public List<Expenses> getExpenses();
 
-    Long countExpenses();
+    int countExpenses();
     Expenses getExpensesById (int id);
     boolean deleteExpenses (int id);
     List<Expenses> findByUserId(Users userId);

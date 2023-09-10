@@ -46,10 +46,11 @@
     </table>
     <c:if test="${counter > 1}">
         <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="${action}">All</a></li>
+            <c:url value="/" var="homeUrl" />
+            <li class="page-item"><a class="page-link" href="${homeUrl}">All</a></li>
                 <c:forEach begin="1" end="${counter}" var="i">
                     <c:url value="/" var="pageUrl">
-                        <c:param name="page" value="${i}"></c:param>
+                        <c:param name="page" value="${i}"/>
                     </c:url>
                 <li class="page-item"><a class="page-link" href="${pageUrl}">${i}</a></li>
                 </c:forEach>

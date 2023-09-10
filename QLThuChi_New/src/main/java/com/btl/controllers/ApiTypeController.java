@@ -38,7 +38,7 @@ public class ApiTypeController {
     
 
     
-    @GetMapping("/type/")
+    @GetMapping("/type")
     @CrossOrigin
     public ResponseEntity<List<Type>> list(@RequestParam Map<String, String> params) {
         return new ResponseEntity<>(this.typeService.getTypes( params), HttpStatus.OK);

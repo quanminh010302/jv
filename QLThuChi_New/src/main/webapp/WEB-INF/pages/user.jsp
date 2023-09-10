@@ -15,7 +15,8 @@
                 <tr>
 
                     <th>Tên đăng nhập</th>
-                    <th>Mật khẩu</th>
+                    <th>Tên</th>
+                    <th>Họ</th>
                     <th>Email</th>
                     <th>Cấp bậc</th>
                     <th></th>
@@ -26,7 +27,8 @@
                     <tr>
 
                         <td>${u.username}</td>
-                        <td>${u.password}</td>
+                        <td>${u.firstname}</td>
+                        <td>${u.latename}</td>
                         <td>${u.email}</td>
                         <td>${u.role}</td>
                         <td>

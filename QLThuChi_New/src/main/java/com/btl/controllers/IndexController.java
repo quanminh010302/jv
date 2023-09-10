@@ -58,7 +58,7 @@ public class IndexController {
         model.addAttribute("users", this.userService.getUsers(params));
 
         int pageSize = Integer.parseInt(this.env.getProperty("PAGE_SIZE"));
-        long count = this.expensesService.countExpenses();
+        int count = this.expensesService.countExpenses();
         model.addAttribute("counter", Math.ceil(count * 1.0 / pageSize));
 
         return "index";

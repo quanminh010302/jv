@@ -37,7 +37,8 @@ public class UserRepostoryImpl implements UserRepostory {
 
     @Autowired
     private LocalSessionFactoryBean factory;
-
+    @Autowired
+    private BCryptPasswordEncoder passEncoder;
     @Autowired
     private Environment env;
 
@@ -103,9 +104,26 @@ public class UserRepostoryImpl implements UserRepostory {
     @Override
     public Users getUserByUsername(String username) {
         Session s = this.factory.getObject().getCurrentSession();
-        Query q = s.createQuery("FROM Users WHERE username = :un"); // Sửa ở đây
+        org.hibernate.query.Query q = s.createQuery("FROM Users WHERE username=:un");
         q.setParameter("un", username);
+
         return (Users) q.getSingleResult();
     }
+
+    @Override
+    public boolean authUser(String username, String password) {
+        Users u = this.getUserByUsername(username);
+
+        return this.passEncoder.matches(password, u.getPassword());
+    }
+
+     @Override
+    public Users addUser(Users u) {
+        Session s = this.factory.getObject().getCurrentSession();
+        s.save(u);
+        
+        return u;
+    }
+
 
 }

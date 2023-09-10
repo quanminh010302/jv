@@ -39,7 +39,7 @@ public class ExpensesServiceImpl implements ExpensesService {
     }
     
     @Override
-    public Long countExpenses() {
+    public int countExpenses() {
         return this.expensesRepo.countExpenses();
     }
     
